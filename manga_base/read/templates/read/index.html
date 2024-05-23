@@ -1,24 +1,59 @@
 {% extends "main/base.html" %}
 {% load static %}
 
+{% block css_main %}
+
+<style>
+.custom-btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+}
+
+.button-container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5rem; /* Adjust gap as needed */
+  margin-top: 1rem; /* Space between 'Read Now' and other buttons */
+}
+
+.mt-3 {
+  margin-top: 1rem; /* Adds margin-top to the paragraph */
+}
+</style>
+{% endblock %}
+
+
 {% block content %}
-<div class="container d-flex align-items-center">
-
-
+<div class="container d-flex align-items-center" style="margin-top: 50px;">
   <div>
-    
-  <div class="container">
-    <div class="row">
-      <div class="col"> 
-        <img src="{% static 'main/cover_pages/jjk_cover.jpeg' %}" style="height:300px" class="rounded border border-light">
-      </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6"> 
+          <img src="{% static 'main/cover_pages/jjk_cover.jpeg' %}" style="height:300px" class="rounded border border-light">
+        </div>
+        <div class="col-12 col-md-6">
+          <h2 class="text-white font-weight-bold" style="white-space: nowrap;">Jujutsu Kaisen</h2>
+          <p class="text-secondary">呪術廻戦</p>
+          <button type="button" class="btn btn-warning font-weight-bold">Read Now</button>
+          
+          <div class="button-container">
+            <button type="button" class="btn btn-dark custom-btn-sm">Action</button>
+            <button type="button" class="btn btn-dark custom-btn-sm">Demons</button>
+            <button type="button" class="btn btn-dark custom-btn-sm">Fantasy</button>
+            <button type="button" class="btn btn-dark custom-btn-sm">Shounen</button>
+            <button type="button" class="btn btn-dark custom-btn-sm">Supernatural</button>
+          </div>
 
-      <div class="col">
-        <h2 class="text-white font-weight-bold">Jujutsu Kaisen</h2>
-        <p class="text-secondary">呪術廻戦</p>
+          <p class="mt-3">
+            Hidden in plain sight, an age-old conflict rages on. Supernatural monsters known as "Curses" terrorize humanity from the shadows, and powerful humans known as "Jujutsu" sorcerers use mystical arts to exterminate them. When high school student Yuuji Itadori finds a dried-up finger of the legendary
+          </p>
+        </div>
       </div>
-
     </div>
   </div>
 </div>
+
+
+
+
 {% endblock %}
