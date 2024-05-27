@@ -1,0 +1,1 @@
+[{"model": "read.categories", "pk": 1, "fields": {"name": "Manga", "slug": "manga"}}, {"model": "read.categories", "pk": 2, "fields": {"name": "manhwa", "slug": "manhwa"}}, {"model": "read.categories", "pk": 3, "fields": {"name": "manhua", "slug": "manhua"}}]
