@@ -29,7 +29,7 @@
       class="navbar navbar-expand-sm bg-dark justify-content-between NavBar text-white font-weight-bold"
     >
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
           <img
             src="{% static 'main/icons/manga_logo.jpg' %}"
             style="height: 50px"
@@ -74,6 +74,13 @@
 
     {% block content %}{% endblock %}
 
+    <hr style="color: white;">
+
+    <footer class="py-4">
+      <div class="container">
+          <p class="m-0 text-center text-white">Copyright &copy; b2k4rys 2024</p>
+      </div>
+    </footer>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

@@ -2,13 +2,16 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Create your views here.
-from read.models import Categories
+
+from read.models import Manga
+
 
 def home(request):
-  categories = Categories.objects.all()
+
+  manga = Manga.objects.all()
 
   context = {
-    'title': 'Home',
-    'categories': categories
+    'manga': manga
   }
-  return render(request, "main/index.html")
+
+  return render(request, "main/index.html", context)

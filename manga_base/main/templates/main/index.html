@@ -32,6 +32,16 @@
     max-height: 100%;
     object-fit: contain;
   }
+
+  .card-img-top {
+      height: 300px; /* Adjust the height as needed */
+      width: 100%;
+      object-fit: cover;
+    }
+
+  .card-spacing {
+    margin-left: 20px; /* Adjust the margin as needed */
+  }
 </style>
 {% endblock %}
 
@@ -42,22 +52,58 @@
   </div>
 </div>
 
+
 <div class="swiper mySwiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"><img src="{% static 'main/cover_pages/jjk_cover.jpeg' %}" alt="Jujutus Kaisen"></div>
-    <div class="swiper-slide"><img src="{% static 'main/cover_pages/blue_lock_cover_page.webp' %}" alt="Blue lock"></div>
-    <div class="swiper-slide"><img src="{% static 'main/cover_pages/one_piece_cover_page.jpeg'%}" alt="Slide 3"></div>
-    <div class="swiper-slide"><img src="{% static 'main/cover_pages/bleach_cover_page.jpeg'%}" alt="Slide 4"></div>
-    <div class="swiper-slide"><img src="{% static 'main/cover_pages/tokyo_ghoul_cover_page.jpeg' %}"alt="Slide 5"></div>
-    <div class="swiper-slide"><img src="{% static 'main/cover_pages/sakamoto_days_cover_page.webp' %}" alt="Slide 6"></div>
-    <div class="swiper-slide"><img src="{% static 'main/cover_pages/chainsaw_man_cover_page.jpg' %}" alt="Slide 7"></div>
-    <div class="swiper-slide"><img src="{% static 'main/cover_pages/one_punch_man_cover_page.webp' %}" alt="Slide 8"></div>
-    <div class="swiper-slide"><img src="{% static 'main/cover_pages/attack_on_titan_cover_page.jpg' %}" alt="Slide 9"></div>
+    {% for each_manga in manga %}
+    <div class="swiper-slide"><a href="{% url "read:read_manga" each_manga.slug %}"><img src='{{ each_manga.image.url }}' alt="{{ each_manga.name }}"></a></div>
+    {% endfor %}
   </div>
   <div class="swiper-button-prev"></div>
   <div class="swiper-button-next"></div>
   <div class="swiper-pagination"></div>
 </div>
+
+
+<div class="d-flex justify-content-start">
+  <div>
+    <h2 class="text-white font-weight-bold" style="padding-left: 25px; padding-top: 25px;">Подборки</h2>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center">
+  <div class="d-flex">
+    <div class="card bg-dark" style="width: 18rem;">
+      <img src="{% static 'main/collections_covers/powerful_main.jpeg' %}" class="card-img-top">
+      <div class="card-body text-white">
+        <h3 class="card-title">Мощьный ГГ</h3>
+        <p class="card-text">Коллекция манги с сильным гг</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex card-spacing">
+    <div class="card bg-dark" style="width: 18rem;">
+      <img src="{% static 'main/collections_covers/best_manga.jpeg' %}" class="card-img-top">
+      <div class="card-body text-white">
+        <h3 class="card-title">Топ манги</h3>
+        <p class="card-text">Лучшие манги по мнению создателя сайта</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex card-spacing">
+    <div class="card bg-dark" style="width: 18rem;">
+      <img src="{% static 'main/collections_covers/anti_hero.jpeg' %}" class="card-img-top">
+      <div class="card-body text-white">
+        <h3 class="card-title">Анти Герой</h3>
+        <p class="card-text">Каково это, противостоят всему миру?</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>

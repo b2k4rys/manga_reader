@@ -4,5 +4,5 @@ from . import views
 app_name = 'read'
 
 urlpatterns = [
-  path('jujutsu-kaisen', views.jjk, name='jjk')
+  path('<slug:manga_slug>/', views.read, name='read_manga')
 ]
