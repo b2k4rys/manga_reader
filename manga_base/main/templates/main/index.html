@@ -58,6 +58,7 @@
     {% for each_manga in manga %}
     <div class="swiper-slide"><a href="{% url "read:read_manga" each_manga.slug %}"><img src='{{ each_manga.image.url }}' alt="{{ each_manga.name }}"></a></div>
     {% endfor %}
+    
   </div>
   <div class="swiper-button-prev"></div>
   <div class="swiper-button-next"></div>

@@ -1,0 +1,24 @@
+{% extends "main/base.html" %} {% load static %}
+
+{% block css_main %}
+{% endblock %}
+
+{% block content %}
+<form method="POST">
+	{% csrf_token %}
+
+	<h1 class="text-white text-center">
+		Register here
+	</h1>
+	<div class="text-center">
+    {% for field in registerform %}
+        <div class="fieldWrapper text-white" style="padding-bottom: 0.2rem;">
+            {{ field.errors }}
+            {{ field.label_tag }} {{ field }}
+        </div>
+    {% endfor %}
+	<button type="submit" value="Register" class="button btn-light">Register</button>
+	</div>
+
+</form>
+{% endblock %}

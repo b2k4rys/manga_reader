@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     "debug_toolbar",
 
     'main',
-    'read',  
+    'read',
+    'accounts'
 ]
 
 MIDDLEWARE = [
@@ -134,6 +135,9 @@ INTERNAL_IPS = [
     "127.0.0.1",
     # ...
 ]
+
+
+CRISPY_TEMPLATE_PACK="bootstrap5"
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
