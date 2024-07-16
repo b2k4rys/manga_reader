@@ -48,4 +48,4 @@ def my_login(request):
 def user_logout(request):
 
   auth.logout (request)
-  return redirect('')
+  return redirect('/')
